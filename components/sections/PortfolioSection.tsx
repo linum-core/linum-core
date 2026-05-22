@@ -6,31 +6,10 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Card } from '@/components/ui/Card'
 import { SectionTitle } from '@/components/ui/SectionTitle'
+import { ScrollReveal } from '@/components/animations/ScrollReveal'
 import { projects } from '@/lib/data/projects'
 import type { ProjectStatus } from '@/lib/types'
 
-// Inline ScrollReveal — replace with @/components/animations/ScrollReveal once Hero agent creates it
-function ScrollReveal({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: React.ReactNode
-  className?: string
-  delay?: number
-}) {
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, delay, ease: 'easeOut' }}
-    >
-      {children}
-    </motion.div>
-  )
-}
 
 type FilterOption = 'all' | ProjectStatus
 
