@@ -4,6 +4,8 @@ import { HeroSection } from '@/components/sections/HeroSection'
 import { PortfolioSection } from '@/components/sections/PortfolioSection'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { CompetenciesSection } from '@/components/sections/CompetenciesSection'
+import { FeedbacksSection } from '@/components/sections/FeedbacksSection'
+import { ContactSection } from '@/components/sections/ContactSection'
 
 export default function Home() {
   return (
@@ -14,7 +16,8 @@ export default function Home() {
         <PortfolioSection />
         <AboutSection />
         <CompetenciesSection />
-        {/* Wave 5: Feedbacks + Contact */}
+        <FeedbacksSection />
+        <ContactSection />
       </main>
       <Footer />
     </>
