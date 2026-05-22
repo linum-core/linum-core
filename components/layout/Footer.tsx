@@ -1,3 +1,5 @@
+'use client'
+
 // components/layout/Footer.tsx
 import Link from 'next/link'
 import Image from 'next/image'

@@ -1,3 +1,5 @@
+'use client'
+
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { Card } from '@/components/ui/Card'
 import { GlowBorder } from '@/components/ui/GlowBorder'
