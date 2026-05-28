@@ -1,25 +1,5 @@
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { HeroSection } from '@/components/sections/HeroSection'
-import { PortfolioSection } from '@/components/sections/PortfolioSection'
-import { AboutSection } from '@/components/sections/AboutSection'
-import { CompetenciesSection } from '@/components/sections/CompetenciesSection'
-import { FeedbacksSection } from '@/components/sections/FeedbacksSection'
-import { ContactSection } from '@/components/sections/ContactSection'
+import { redirect } from 'next/navigation'
 
-export default function Home() {
-  return (
-    <>
-      <Header />
-      <main>
-        <HeroSection />
-        <PortfolioSection />
-        <AboutSection />
-        <CompetenciesSection />
-        <FeedbacksSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
-  )
+export default function RootPage() {
+  redirect('/pt-BR')
 }

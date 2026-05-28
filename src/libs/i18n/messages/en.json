@@ -1,0 +1,185 @@
+{
+  "nav": {
+    "home": "Home",
+    "portfolio": "Work",
+    "about": "About",
+    "competencies": "Practice",
+    "feedbacks": "Voices",
+    "contact": "Contact",
+    "ceo": "Founder",
+    "available": "Accepting projects"
+  },
+  "hero": {
+    "tagline": "There's an unseen connection…",
+    "subtitle": "We build it — not by creating systems, but by restoring connections.",
+    "cta": "Start a conversation",
+    "scrollHint": "Scroll to explore",
+    "eyebrow": "Est. 2024 · São Paulo · Brazil",
+    "title_a": "There is an unseen",
+    "title_b": "connection.",
+    "lede": "Linum Core is an engineering studio that does not build systems — it restores connections between people, processes and the technology that should serve them.",
+    "meta_a": "Available for new projects",
+    "meta_b": "Global delivery",
+    "scroll": "Scroll",
+    "stats": [
+      { "num": "12+", "label": "Systems in production" },
+      { "num": "100%", "label": "On-time delivery" },
+      { "num": "5 yrs", "label": "Average client" }
+    ]
+  },
+  "manifesto": {
+    "eyebrow": "Manifesto · I",
+    "quote": "There is an unseen connection. We build it — not by creating systems, but by restoring connections.",
+    "attrib": "— Gabriel Gomes, Linum Core",
+    "tokens": [
+      { "t": "We do not build" },
+      { "t": "just systems," },
+      { "t": "but the" },
+      { "t": "invisible thread", "c": "accent" },
+      { "t": "that exists before" },
+      { "t": "the code," },
+      { "t": "the one that makes" },
+      { "t": "the true" },
+      { "t": "connections.", "c": "accent" }
+    ]
+  },
+  "competencies": {
+    "title": "What We Do",
+    "subtitle": "End-to-end solutions that restore your digital connections",
+    "category": "Practice",
+    "title_a": "Expertise",
+    "title_b": "in motion.",
+    "lede": "Disciplines we practice with care. Each serving the same intent: restore the connection between purpose and outcome.",
+    "dev": {
+      "title": "Software Development",
+      "description": "Custom systems built with modern technology stacks, tailored to your business needs."
+    },
+    "consulting": {
+      "title": "Systems Consulting",
+      "description": "Strategic analysis and roadmaps to align your technology with your business goals."
+    },
+    "api": {
+      "title": "API Integration",
+      "description": "Connecting your existing systems and third-party services into a unified, reliable layer."
+    },
+    "maintenance": {
+      "title": "Maintenance & Support",
+      "description": "Preventive maintenance, bug fixes, and continuous monitoring"
+    },
+    "integrations": {
+      "title": "Integrations & APIs",
+      "description": "External APIs, webhooks, ERP/CRM integration"
+    },
+    "cloud": {
+      "title": "Cloud & Infrastructure",
+      "description": "Deploy, CI/CD, scalability and DevOps"
+    },
+    "architecture": {
+      "title": "Architecture Design",
+      "description": "Scalable, secure system architecture designed for growth and resilience."
+    },
+    "transformation": {
+      "title": "Digital Transformation",
+      "description": "Guiding businesses through the transition to modern digital operations."
+    }
+  },
+  "portfolio": {
+    "title": "Our Work",
+    "subtitle": "Projects that connect people and systems",
+    "category": "Work",
+    "featured_label": "Featured · 2026",
+    "done": "Shipped",
+    "wip": "In progress",
+    "filter": {
+      "all": "All",
+      "complete": "Complete",
+      "inProgress": "In Progress"
+    },
+    "github": "View on GitHub",
+    "live": "Live Demo",
+    "status": {
+      "complete": "Complete",
+      "inProgress": "In Progress"
+    }
+  },
+  "about": {
+    "title": "About the CEO",
+    "subtitle": "Gabriel Gomes",
+    "bio": "I'm Gabriel Gomes, founder and CEO of Linum Core. With years of experience in software development, systems consulting, and digital transformation, I help companies build the connections they didn't know they were missing.",
+    "bio2": "My approach combines technical precision with a deep understanding of business needs — delivering solutions that are not just functional, but transformative.",
+    "skills": {
+      "title": "Technical Expertise",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "infra": "Infra/DevOps",
+      "consulting": "Consulting",
+      "architecture": "Architecture",
+      "communication": "Communication"
+    }
+  },
+  "ceo": {
+    "category": "About",
+    "title_a": "The",
+    "title_b": "founder",
+    "lede": "Linum Core began with one person. It still has one person at the centre of every decision.",
+    "name": "Gabriel Gomes",
+    "role": "Founder · Principal engineer",
+    "portrait_caption": "GG · 2026",
+    "portrait_corner": "01 / 01",
+    "bio1": "Software engineer for over a decade, having passed through banks, health startups and product studios. Believes that <em>code is prose</em> — and that good prose begins with listening well.",
+    "bio2": "Linum Core was born from a frustration with generic solutions sold for singular problems. Here each client is treated as a case of their own — because they are.",
+    "skills_title": "Skill map",
+    "tab_technical": "Technical",
+    "tab_stacks": "Stack",
+    "tab_relational": "Relational"
+  },
+  "feedbacks": {
+    "title": "What Clients Say",
+    "subtitle": "Real results, real connections",
+    "category": "Voices",
+    "title_a": "Real",
+    "title_b": "voices.",
+    "lede": "Those who have worked with Linum Core."
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Ready to restore the unseen connection in your business?",
+    "num": "VI",
+    "category": "Contact",
+    "title_a": "Shall we",
+    "title_b": "stitch",
+    "title_c": "something?",
+    "lede": "Tell us the problem. Within 48 hours you receive a written first diagnosis — free, no pushed proposal.",
+    "cta": "Send a brief",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending…",
+      "success": "Message sent! We'll get back to you soon.",
+      "error": "Something went wrong. Please try again.",
+      "validation": {
+        "nameRequired": "Name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email",
+        "subjectRequired": "Subject is required",
+        "messageRequired": "Message is required"
+      }
+    },
+    "social": "Or reach us directly"
+  },
+  "footer": {
+    "tagline": "Product engineering that listens.",
+    "copyright": "© 2026 Linum Core. All rights reserved.",
+    "colophon": "Playfair Display · Inter · JetBrains Mono",
+    "policy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "lang": {
+    "en": "English",
+    "ptBR": "Português",
+    "es": "Español"
+  }
+}

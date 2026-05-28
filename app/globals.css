@@ -1,28 +1,79 @@
 @import "tailwindcss";
 
+/* ── Bridge: maps reference design vars (--bg-0, --ink-0 etc.) ── */
+@layer base {
+  :root {
+    /* Colors */
+    --bg-0: #08090c;
+    --bg-1: #0b0d10;
+    --bg-2: #12151a;
+    --bg-3: #1a1f28;
+    --rule: rgba(232,236,244,0.08);
+    --rule-2: rgba(232,236,244,0.16);
+    --ink-0: #f4f6fb;
+    --ink-1: #e6eaf0;
+    --ink-2: #aab3c0;
+    --ink-3: #6b7480;
+    --blue-1: #1e2a38;
+    --blue-2: #2f4f6f;
+    --blue-3: #4a7ab8;
+    --blue-4: #6fa3d2;
+    --red-1: #8a1f1f;
+    --red-2: #c23b3b;
+    --red-3: #ff6b6b;
+    /* Gradients */
+    --brand-grad: linear-gradient(90deg, var(--blue-2), var(--red-2));
+    --brand-grad-soft: linear-gradient(135deg, rgba(47,79,111,0.4), rgba(194,59,59,0.35));
+    /* Aliases */
+    --bg: var(--bg-1);
+    --fg: var(--ink-1);
+    --fg-mute: var(--ink-2);
+    --fg-quiet: var(--ink-3);
+    --accent-blue: var(--blue-3);
+    --accent-red: var(--red-2);
+    /* Geometry */
+    --maxw: 1280px;
+    --maxw-narrow: 980px;
+    --gutter: clamp(20px, 4vw, 56px);
+    --radius: 14px;
+    --radius-sm: 8px;
+    /* Shadows */
+    --glow-blue: 0 0 30px rgba(74,122,184,0.45), 0 0 60px rgba(74,122,184,0.18);
+    --glow-red: 0 0 30px rgba(194,59,59,0.4), 0 0 60px rgba(194,59,59,0.15);
+    /* Font aliases → mapped via next/font variables */
+    --font-display: var(--font-playfair), "Cormorant Garamond", "EB Garamond", serif;
+    --font-serif: var(--font-playfair), serif;
+    --font-mono-display: var(--font-cinzel), "Trajan Pro", serif;
+    --font-sans: var(--font-inter), -apple-system, sans-serif;
+    --font-mono: var(--font-jetbrains), "Fira Code", monospace;
+  }
+}
+
 @theme {
   /* === COLORS === */
-  --color-primary:          #1a1a1a;
-  --color-primary-dark:     #0f0f0f;
-  --color-primary-light:    #2a2a2a;
-  --color-secondary:        #d4af37;
-  --color-secondary-dark:   #c9a227;
-  --color-secondary-light:  #e8c547;
-  --color-accent:           #00d9ff;
-  --color-accent-dark:      #00b8d4;
-  --color-accent-light:     #33e5ff;
-  --color-neutral-100:      #ffffff;
-  --color-neutral-200:      #f5f5f5;
-  --color-neutral-300:      #e0e0e0;
-  --color-neutral-500:      #808080;
-  --color-neutral-700:      #333333;
-  --color-neutral-900:      #000000;
+  --color-bg-0:   #08090c;
+  --color-bg-1:   #0b0d10;
+  --color-bg-2:   #12151a;
+  --color-bg-3:   #1a1f28;
+  --color-ink-0:  #f4f6fb;
+  --color-ink-1:  #e6eaf0;
+  --color-ink-2:  #aab3c0;
+  --color-ink-3:  #6b7480;
+  --color-blue-1: #1e2a38;
+  --color-blue-2: #2f4f6f;
+  --color-blue-3: #4a7ab8;
+  --color-blue-4: #6fa3d2;
+  --color-red-1:  #8a1f1f;
+  --color-red-2:  #c23b3b;
+  --color-red-3:  #ff6b6b;
+  --color-rule:   rgba(232,236,244,0.08);
+  --color-rule-2: rgba(232,236,244,0.16);
 
   /* === FONTS === */
-  --font-heading:  var(--font-cinzel), serif;
-  --font-subtitle: var(--font-jomolhari), serif;
-  --font-body:     var(--font-inter), sans-serif;
-  --font-code:     var(--font-fira-code), monospace;
+  --font-heading:   var(--font-cinzel), serif;
+  --font-editorial: var(--font-playfair), "Cormorant Garamond", serif;
+  --font-body:      var(--font-inter), sans-serif;
+  --font-code:      var(--font-jetbrains), "Fira Code", monospace;
 
   /* === BORDER RADIUS === */
   --radius-sm:  2px;
@@ -32,7 +83,7 @@
 
   /* === ANIMATIONS === */
   --animate-glow:        glow-pulse 2s ease-in-out infinite alternate;
-  --animate-gold-glow:   gold-pulse 2s ease-in-out infinite alternate;
+  --animate-red-glow:    red-pulse 2s ease-in-out infinite alternate;
   --animate-float:       float 4s ease-in-out infinite;
   --animate-cube:        cube-rotate 15s linear infinite;
   --animate-scroll:      scroll-bounce 1.5s ease-in-out infinite;
@@ -42,13 +93,13 @@
 
 /* === KEYFRAMES === */
 @keyframes glow-pulse {
-  from { box-shadow: 0 0 5px #00d9ff40; }
-  to   { box-shadow: 0 0 20px #00d9ff80, 0 0 40px #00d9ff40; }
+  from { box-shadow: 0 0 5px rgba(74,122,184,0.25); }
+  to   { box-shadow: 0 0 30px rgba(74,122,184,0.45), 0 0 60px rgba(74,122,184,0.18); }
 }
 
-@keyframes gold-pulse {
-  from { box-shadow: 0 0 5px #d4af3740; }
-  to   { box-shadow: 0 0 20px #d4af3780, 0 0 40px #d4af3740; }
+@keyframes red-pulse {
+  from { box-shadow: 0 0 5px rgba(194,59,59,0.2); }
+  to   { box-shadow: 0 0 30px rgba(194,59,59,0.4), 0 0 60px rgba(194,59,59,0.15); }
 }
 
 @keyframes float {
@@ -86,8 +137,11 @@ html {
 }
 
 body {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background:
+    radial-gradient(ellipse 90% 50% at 20% 0%, rgba(47,79,111,0.18), transparent 60%),
+    radial-gradient(ellipse 70% 40% at 80% 100%, rgba(194,59,59,0.12), transparent 60%),
+    var(--color-bg-1);
+  color: var(--color-ink-0);
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 16px;
   line-height: 1.6;
@@ -96,15 +150,17 @@ body {
 }
 
 /* === TYPOGRAPHY UTILITIES === */
-.font-heading  { font-family: var(--font-heading); }
-.font-subtitle { font-family: var(--font-subtitle); }
-.font-code     { font-family: var(--font-code); }
+.font-heading   { font-family: var(--font-heading); }
+.font-editorial { font-family: var(--font-editorial); }
+.font-code      { font-family: var(--font-code); }
 
 /* === SCROLLBAR === */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0f0f0f; }
-::-webkit-scrollbar-thumb { background: #d4af3760; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+::-webkit-scrollbar-track { background: var(--color-bg-0); }
+::-webkit-scrollbar-thumb { background: var(--color-blue-2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-blue-3); }
 
 /* === SELECTION === */
-::selection { background: #d4af3730; color: #ffffff; }
+::selection { background: rgba(74,122,184,0.25); color: var(--color-ink-0); }
+
+@import './design.css';
