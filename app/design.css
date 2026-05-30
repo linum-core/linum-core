@@ -278,7 +278,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 }
 .preloader__logo {
   position: relative;
-  width: 100%;
+  width: 140%;
+  max-width: 280px;
   height: auto;
   z-index: 2;
   /* Lift the brand colors against the dark bg without blurring the artwork */

@@ -181,5 +181,8 @@
     "en": "English",
     "ptBR": "Português",
     "es": "Español"
+  },
+  "preloader": {
+    "caption": "Conectando esencias"
   }
 }
