@@ -7,10 +7,12 @@
   "env": {
     "NEXT_PUBLIC_SITE_URL": {
       "description": "Public site URL",
+      "value": "https://linumcore.com",
       "required": true
     },
     "NEXT_PUBLIC_API_URL": {
       "description": "API base URL",
+      "value": "https://api.linumcore.com",
       "required": true
     },
     "NEXT_PUBLIC_API_VERSION": {
