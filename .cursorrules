@@ -1,0 +1,61 @@
+# Cursor Rules — linum-core-portfolio
+
+<!-- BEGIN linum-govern -->
+## linum-govern Governance Active
+
+This project is governed by **linum-govern**. All code changes are audited for:
+
+- Architecture alignment (`.claude/linum-govern/docs/architecture/`)
+- Code style compliance (`.claude/linum-govern/docs/rules/`)
+- Validation contract adherence (`.claude/linum-govern/docs/contracts/`)
+- Security/typing gates on critical files
+
+See `.claude/linum-govern/docs/system/README.md` for the governance workflow.
+<!-- END linum-govern -->
+
+## Stack-Specific Rules
+
+**Framework**: Next.js 16.2.6 (App Router, breaking changes — check `node_modules/next/dist/docs/`)
+**Language**: TypeScript 5 (strict mode)
+**Styling**: Tailwind CSS 4
+**Testing**: Playwright E2E
+**Package manager**: bun
+**i18n**: next-intl (en, pt-BR)
+
+## Code Style
+
+- Functions: 4–20 lines. Split if longer.
+- Files: under 500 lines. Split by responsibility.
+- SRP: one thing per function, one responsibility per module.
+- Names: specific, unique. Avoid `data`, `handler`, `Manager`.
+- Types: explicit. No `any`. Strict mode enforced.
+- No duplication. Extract shared logic.
+- Early returns over nested ifs. Max 2 indentation levels.
+- Comments: WHY not WHAT. Reference issue/commit if context-dependent.
+
+## Components & i18n
+
+- **Components**: one per file, PascalCase naming, explicit Props interface
+- **i18n**: all user-facing strings in `messages/{locale}.json`, never hardcoded
+- **Hooks**: `use*` prefix, exported from component files
+- **Styling**: Tailwind CSS classes only, no inline styles
+
+## Testing
+
+- **Framework**: Playwright (E2E only)
+- **Run**: `bun run test:e2e`
+- **Location**: `tests/{visual,functional}/{feature}.spec.ts`
+- **Rule**: every feature gets an E2E test; every bug gets a regression test
+
+## Validation
+
+Before commit:
+
+```bash
+bun run lint      # ESLint check
+tsc --noEmit      # TypeScript check
+bun run build     # Next.js build
+bun run test:e2e  # Playwright E2E
+```
+
+All must pass. No exceptions.

@@ -21,7 +21,15 @@
       "mcp__plugin_claude-mem_mcp-search__get_observations",
       "mcp__plugin_context-mode_context-mode__ctx_execute_file",
       "Bash(bun build *)",
-      "Bash(bun run *)"
+      "Bash(bun run *)",
+      "Skill(precision-research)",
+      "mcp__plugin_context-mode_context-mode__ctx_index",
+      "Bash(python3 -c 'import json,sys; json.load\\(open\\('\\\\''__TRACKED_VAR__'\\\\''\\)\\); print\\('\\\\''OK  __TRACKED_VAR__'\\\\''\\)')",
+      "Bash(python3 -)",
+      "Bash(gh auth *)",
+      "Bash(gh --version)",
+      "Bash(git config *)",
+      "Bash(git remote *)"
     ],
     "additionalDirectories": [
       "/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/docs"
@@ -119,33 +127,6 @@
           {
             "type": "command",
             "command": "echo \"$(date +%s.%N),$(ps -o %cpu= -p $$),$(ps -o rss= -p $$),$CLAUDE_TOOL_NAME,start\" >> ~/.claude/performance.csv"
-          }
-        ]
-      },
-      {
-        "matcher": "Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/plan-gate.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "MultiEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/plan-gate.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/plan-gate.sh"
           }
         ]
       }

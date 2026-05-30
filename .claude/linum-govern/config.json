@@ -1,0 +1,32 @@
+{
+  "packageManager": "bun",
+  "planDir": ".claude/linum-govern/docs/plans",
+  "validationCommands": {
+    "lint": "bun run lint",
+    "typecheck": "tsc --noEmit",
+    "build": "bun run build",
+    "test": "bun run test:e2e"
+  },
+  "criticalFileGlobs": [
+    "**/auth/**",
+    "**/middleware.*",
+    "app/api/**",
+    "app/layout.tsx",
+    "next.config.*",
+    ".claude/linum-govern/contracts/**",
+    "src/libs/animation/**",
+    "messages/**"
+  ],
+  "stack": {
+    "framework": "Next.js 16.2.6",
+    "language": "TypeScript 5",
+    "runtime": "Node.js",
+    "testFramework": "Playwright",
+    "i18n": "next-intl",
+    "styling": "Tailwind CSS 4"
+  },
+  "team": {
+    "name": "linum-core-portfolio",
+    "contact": "ggvgabriel05@gmail.com"
+  }
+}
