@@ -28,28 +28,6 @@
       "required": false,
       "value": "en-US,pt-BR,es-ES"
     },
-    "NEXT_PUBLIC_ENABLE_ANALYTICS": {
-      "description": "Enable analytics features",
-      "required": false,
-      "value": "false"
-    },
-    "NEXT_PUBLIC_ENABLE_PORTFOLIO": {
-      "description": "Enable portfolio section",
-      "required": false,
-      "value": "true"
-    },
-    "NEXT_PUBLIC_GA_ID": {
-      "description": "Google Analytics ID (optional)",
-      "required": false
-    },
-    "NEXT_PUBLIC_HOTJAR_ID": {
-      "description": "Hotjar ID (optional)",
-      "required": false
-    },
-    "API_KEY_SECRET": {
-      "description": "Secret API key for backend communication",
-      "required": true
-    },
     "JWT_SECRET": {
       "description": "JWT signing secret",
       "required": true
@@ -86,14 +64,11 @@
       "description": "Debug mode flag",
       "required": false,
       "value": "false"
-    },
-    "LOG_LEVEL": {
-      "description": "Log level (error, warn, info, debug)",
-      "required": false,
-      "value": "info"
     }
   },
-  "regions": ["sfo1"],
+  "regions": [
+    "sfo1"
+  ],
   "git": {
     "deploymentEnabled": true
   }
