@@ -29,7 +29,8 @@
       "Bash(gh auth *)",
       "Bash(gh --version)",
       "Bash(git config *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "mcp__plugin_playwright_playwright__browser_close"
     ],
     "additionalDirectories": [
       "/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/docs"
