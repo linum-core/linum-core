@@ -1,26 +1,40 @@
 "use client";
 
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 
+// [blue-thick, red-thick, blue-thin, red-thin] — harp-like frequencies
 const BASE_FREQS = [220, 293, 440, 587] as const;
 
 export function useStringSound() {
   const ctxRef = useRef<AudioContext | null>(null);
 
-  const getCtx = useCallback((): AudioContext => {
+  useEffect(() => {
+    return () => {
+      ctxRef.current?.close();
+      ctxRef.current = null;
+    };
+  }, []);
+
+  const getCtx = useCallback(async (): Promise<AudioContext> => {
     if (!ctxRef.current) {
       ctxRef.current = new AudioContext();
     }
     if (ctxRef.current.state === "suspended") {
-      ctxRef.current.resume();
+      await ctxRef.current.resume();
     }
     return ctxRef.current;
   }, []);
 
-  const pluck = useCallback((lineIndex: 0 | 1 | 2 | 3, position: number) => {
-    const ctx = getCtx();
+  /**
+   * Toca o som de uma corda.
+   * @param lineIndex 0=blue-thick 1=red-thick 2=blue-thin 3=red-thin
+   * @param position 0→1 da esquerda para direita (modula pitch ±20%)
+   */
+  const pluck = useCallback(async (lineIndex: 0 | 1 | 2 | 3, position: number) => {
+    const p = Math.max(0, Math.min(1, position));
+    const ctx = await getCtx();
     const baseFreq = BASE_FREQS[lineIndex];
-    const freq = baseFreq * (0.8 + position * 0.4);
+    const freq = baseFreq * (0.8 + p * 0.4);
 
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
