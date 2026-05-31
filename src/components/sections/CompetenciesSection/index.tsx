@@ -71,7 +71,7 @@ export function CompetenciesSection() {
   const ref = useReveal();
 
   return (
-    <section className="section comp" id="comp" ref={ref}>
+    <section className="section comp" id="competencies" ref={ref}>
       <CraftIconDefs />
       <div className="container">
         <SectionHead

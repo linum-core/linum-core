@@ -1,0 +1,43 @@
+.nav__link {
+  position: relative;
+  overflow: visible;
+  padding: 6px 0;
+  transition: color 0.25s ease;
+}
+
+.nav__link::before,
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--blue-3), var(--red-2));
+  top: 50%;
+  transform: scaleX(0);
+  transition:
+    transform 0.22s ease,
+    top 0.22s ease 0.15s,
+    bottom 0.22s ease 0.15s;
+}
+
+.nav__link:hover {
+  color: var(--ink-0);
+}
+
+.nav__link:hover::before {
+  transform: scaleX(1);
+  top: 2px;
+}
+
+.nav__link:hover::after {
+  transform: scaleX(1);
+  top: calc(100% - 2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__link::before,
+  .nav__link::after {
+    transition: none;
+  }
+}

@@ -1,0 +1,35 @@
+.nav__social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  color: var(--ink-2);
+  border: 1px solid transparent;
+  background: transparent;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.nav__social-link:hover {
+  color: var(--ink-0);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav__social-link:focus {
+  outline: 2px solid var(--blue-3);
+  outline-offset: 2px;
+}
+
+.nav__social-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}

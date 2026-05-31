@@ -1,0 +1,74 @@
+.nav__lang-trigger {
+  position: relative;
+}
+
+.nav__lang-flag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 7px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.nav__lang-flag:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.nav__lang-flag:focus {
+  outline: 2px solid var(--blue-3);
+  outline-offset: 2px;
+}
+
+.nav__lang-flag-emoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.nav__lang-flag-label {
+  font-size: 12px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: var(--ink-1);
+  letter-spacing: 0.01em;
+}
+
+.nav__lang-dropdown {
+  position: fixed;
+  min-width: 160px;
+  padding: 6px;
+  z-index: 200;
+  border-radius: var(--radius);
+}
+
+.nav__lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  color: var(--ink-1);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  width: 100%;
+  text-align: left;
+}
+
+.nav__lang-option:hover,
+.nav__lang-option[aria-selected="true"] {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--ink-0);
+}
+
+.nav__lang-option:focus {
+  outline: 2px solid var(--blue-3);
+  outline-offset: -2px;
+}

@@ -30,7 +30,11 @@
       "Bash(gh --version)",
       "Bash(git config *)",
       "Bash(git remote *)",
-      "mcp__plugin_playwright_playwright__browser_close"
+      "mcp__plugin_playwright_playwright__browser_close",
+      "Skill(impeccable)",
+      "mcp__plugin_playwright_playwright__browser_press_key",
+      "mcp__plugin_playwright_playwright__browser_hover",
+      "mcp__plugin_playwright_playwright__browser_resize"
     ],
     "additionalDirectories": [
       "/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/docs"
