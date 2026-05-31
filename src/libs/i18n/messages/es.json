@@ -1,13 +1,17 @@
 {
   "nav": {
     "home": "Inicio",
+    "manifesto": "Manifiesto",
     "portfolio": "Trabajo",
     "about": "Sobre Nosotros",
     "competencies": "Práctica",
     "feedbacks": "Voces",
     "contact": "Contacto",
-    "ceo": "Fundador",
-    "available": "Aceptando proyectos"
+    "ceo": "El fundador",
+    "available": "Aceptando proyectos",
+    "waitlist": "Proyectos en cola",
+    "contact_cta": "Ponerse en Contacto",
+    "tagline": "Conectando esencias"
   },
   "hero": {
     "tagline": "Hay una conexión no percibida…",
@@ -30,7 +34,7 @@
   "manifesto": {
     "eyebrow": "Manifiesto · I",
     "quote": "Hay una conexión no percibida. La construimos — no creando sistemas, sino restaurando conexiones.",
-    "attrib": "— Gabriel Gomes, Linum Core",
+    "attrib": "Gabriel Gomes · Fundador",
     "tokens": [
       { "t": "No construimos" },
       { "t": "solo sistemas," },
@@ -180,7 +184,8 @@
   "lang": {
     "en": "English",
     "ptBR": "Português",
-    "es": "Español"
+    "es": "Español",
+    "select": "Seleccionar idioma"
   },
   "preloader": {
     "caption": "Conectando esencias"

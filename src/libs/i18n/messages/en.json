@@ -1,13 +1,17 @@
 {
   "nav": {
     "home": "Home",
+    "manifesto": "Manifesto",
     "portfolio": "Work",
     "about": "About",
     "competencies": "Practice",
     "feedbacks": "Voices",
     "contact": "Contact",
     "ceo": "Founder",
-    "available": "Accepting projects"
+    "available": "Accepting projects",
+    "waitlist": "Projects in queue",
+    "contact_cta": "Get in Touch",
+    "tagline": "Connecting essences"
   },
   "hero": {
     "tagline": "There's an unseen connection…",
@@ -30,7 +34,7 @@
   "manifesto": {
     "eyebrow": "Manifesto · I",
     "quote": "There is an unseen connection. We build it — not by creating systems, but by restoring connections.",
-    "attrib": "— Gabriel Gomes, Linum Core",
+    "attrib": "Gabriel Gomes · Founder",
     "tokens": [
       { "t": "We do not build" },
       { "t": "just systems," },
@@ -180,7 +184,8 @@
   "lang": {
     "en": "English",
     "ptBR": "Português",
-    "es": "Español"
+    "es": "Español",
+    "select": "Select language"
   },
   "preloader": {
     "caption": "Connecting essences"
