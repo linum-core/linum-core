@@ -534,19 +534,9 @@ button {
   gap: 14px;
 }
 .nav__brand-mark {
-  width: 46px;
-  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
-  border: 1px solid var(--rule-2);
-  border-radius: 6px;
-  background: linear-gradient(
-    140deg,
-    rgba(74, 122, 184, 0.06),
-    rgba(255, 107, 107, 0.04)
-  );
 }
 .nav__brand-word {
   font-family: var(--font-mono-display);
@@ -565,13 +555,12 @@ button {
 }
 .nav__brand-word small {
   display: block;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.28em;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.04em;
   color: var(--fg-quiet);
-  margin-top: 4px;
+  margin-top: 3px;
   font-weight: 400;
-  text-transform: uppercase;
 }
 .nav__links {
   display: flex;
@@ -603,99 +592,61 @@ button {
   height: 1px;
   background: var(--brand-grad);
 }
-.nav__lang {
-  display: flex;
-  gap: 2px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  border: 1px solid var(--rule-2);
-  border-radius: 999px;
-  padding: 3px;
-  background: rgba(255, 255, 255, 0.02);
-}
-.nav__lang button {
-  padding: 5px 11px;
-  border-radius: 999px;
-  color: var(--fg-quiet);
-  letter-spacing: 0.1em;
-  font-weight: 500;
-}
-.nav__lang button.is-active {
-  background: var(--brand-grad);
-  color: var(--ink-0);
-}
-
-/* Right cluster — trust pill + lang + CTA */
+/* Right cluster */
 .nav__right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.nav__trust {
-  display: inline-flex;
+.nav__contact-btn {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 14px;
-  border: 1px solid var(--rule-2);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-  background: rgba(46, 166, 108, 0.06);
-}
-.nav__trust-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: #2ea66c;
-  box-shadow: 0 0 0 0 rgba(46, 166, 108, 0.6);
-  animation: trustPulse 2.4s ease-in-out infinite;
-}
-@keyframes trustPulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(46, 166, 108, 0.55);
-  }
-  50% {
-    box-shadow: 0 0 0 5px rgba(46, 166, 108, 0);
-  }
-}
-.nav__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
+  gap: 7px;
+  padding: 6px 16px 6px 12px;
+  border-radius: 20px;
   font-family: var(--font-sans);
   font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   color: var(--ink-0);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--blue-2), var(--red-1));
-  isolation: isolate;
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s,
-    border-color 0.2s;
-  position: relative;
+  background: var(--brand-grad);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
 }
-.nav__cta:hover {
+.nav__contact-btn:hover {
+  opacity: 0.88;
   transform: translateY(-1px);
-  border-color: rgba(255, 255, 255, 0.24);
-  box-shadow: 0 8px 22px -8px rgba(194, 59, 59, 0.5);
 }
-.nav__cta span {
-  display: inline-block;
-  transition: transform 0.2s;
+.nav__contact-btn:hover .nav__contact-icon {
+  animation: phoneShake 0.5s ease-in-out;
 }
-.nav__cta:hover span {
-  transform: translateX(3px);
+.nav__contact-btn:active {
+  transform: translateY(0);
 }
-@media (max-width: 1180px) {
-  .nav__trust {
+.nav__contact-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+@keyframes phoneShake {
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(-18deg); }
+  30%  { transform: rotate(18deg); }
+  45%  { transform: rotate(-14deg); }
+  60%  { transform: rotate(14deg); }
+  75%  { transform: rotate(-8deg); }
+  90%  { transform: rotate(8deg); }
+  100% { transform: rotate(0deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav__contact-btn:hover .nav__contact-icon {
+    animation: none;
+  }
+}
+@media (max-width: 980px) {
+  .nav__contact-btn {
     display: none;
   }
 }
@@ -703,13 +654,23 @@ button {
   .nav__links {
     display: none;
   }
-  .nav__cta {
-    padding: 8px 14px;
-    font-size: 11px;
-  }
   .nav__brand-word small {
     display: none;
   }
+}
+
+/* ============================================================
+   Glassmorphism utility
+   ============================================================ */
+.glass {
+  background: rgba(8, 9, 12, 0.65);
+  backdrop-filter: blur(28px) saturate(180%) brightness(1.04);
+  -webkit-backdrop-filter: blur(28px) saturate(180%) brightness(1.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 /* ============================================================
@@ -1108,7 +1069,7 @@ button {
 .manifesto__weave {
   position: absolute;
   inset: 0;
-  pointer-events: none;
+  pointer-events: auto;
   z-index: 0;
 }
 .manifesto__weave svg {
@@ -1116,26 +1077,27 @@ button {
   height: 100%;
   position: absolute;
   inset: 0;
+  cursor: crosshair;
 }
 .manifesto__weave path {
   fill: none;
-  stroke-width: 1.5;
   stroke-linecap: round;
-  stroke-dasharray: 3000;
-  stroke-dashoffset: var(--off, 3000);
   transition: stroke-dashoffset 0.1s linear;
 }
-.manifesto__weave .w-blue {
-  stroke: var(--blue-3);
-  filter: drop-shadow(0 0 8px rgba(74, 122, 184, 0.5));
+.manifesto__ripple-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
 }
-.manifesto__weave .w-red {
-  stroke: var(--red-2);
-  filter: drop-shadow(0 0 8px rgba(194, 59, 59, 0.5));
-}
-.manifesto__weave .w-thin {
-  stroke-width: 0.7;
-  opacity: 0.5;
+@media (prefers-reduced-motion: reduce) {
+  .manifesto__ripple-canvas {
+    display: none;
+  }
+  .manifesto__weave svg {
+    transition: none;
+  }
 }
 .manifesto__hand-left,
 .manifesto__hand-right {
