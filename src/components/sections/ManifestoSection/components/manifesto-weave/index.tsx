@@ -98,6 +98,8 @@ export function ManifestoWeave({ progress }: ManifestoWeaveProps) {
   const ripplesRef = useRef<Ripple[]>([]);
   const rafRef = useRef<number>(0);
   const lastTriggerRef = useRef<Map<number, number>>(new Map());
+  const nearRef = useRef<boolean[]>([false, false, false, false]);
+  const nearTouchRef = useRef<boolean[]>([false, false, false, false]);
 
   const sampleBasePaths = useCallback(() => {
     physicsRef.current.forEach((state, i) => {
@@ -156,8 +158,9 @@ export function ManifestoWeave({ progress }: ManifestoWeaveProps) {
   );
 
   const animate = useCallback(() => {
-    const C = 0.45;
-    const DAMP = 0.997;
+    // tensioned string: faster wave speed, quicker decay, less oscillation
+    const C = 0.55;
+    const DAMP = 0.994;
     const canvas = canvasRef.current;
     const ctx2d = canvas?.getContext("2d") ?? null;
 
@@ -232,15 +235,48 @@ export function ManifestoWeave({ progress }: ManifestoWeaveProps) {
       const my = ((e.clientY - rect.top) / rect.height) * 600;
 
       physicsRef.current.forEach((state, lineIdx) => {
-        for (let i = 0; i < N_POINTS; i += 5) {
-          const dx = mx - state.baseX[i];
-          const dy = my - state.baseY[i];
-          if (Math.hypot(dx, dy) < 12) {
-            const t = i / (N_POINTS - 1);
-            const amp = LINES[lineIdx].strokeWidth > 1 ? 18 : 10;
-            triggerString(lineIdx, t, amp);
-            break;
-          }
+        const ci = Math.max(0, Math.min(N_POINTS - 1, Math.round((mx / 1200) * (N_POINTS - 1))));
+        const lineY = state.baseY[ci];
+        const dist = Math.abs(my - lineY);
+        const THRESHOLD = 18;
+
+        if (dist < THRESHOLD && !nearRef.current[lineIdx]) {
+          nearRef.current[lineIdx] = true;
+          const t = ci / (N_POINTS - 1);
+          const amp = LINES[lineIdx].strokeWidth > 1 ? 10 : 6;
+          triggerString(lineIdx, t, amp);
+        } else if (dist >= THRESHOLD) {
+          nearRef.current[lineIdx] = false;
+        }
+      });
+    },
+    [triggerString]
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    nearRef.current = [false, false, false, false];
+  }, []);
+
+  const handleTouchStart = useCallback(
+    (e: React.TouchEvent<SVGSVGElement>) => {
+      const svg = svgRef.current;
+      if (!svg) return;
+      const rect = svg.getBoundingClientRect();
+      const touch = e.touches[0];
+      const mx = ((touch.clientX - rect.left) / rect.width) * 1200;
+      const my = ((touch.clientY - rect.top) / rect.height) * 600;
+
+      physicsRef.current.forEach((state, lineIdx) => {
+        const ci = Math.max(0, Math.min(N_POINTS - 1, Math.round((mx / 1200) * (N_POINTS - 1))));
+        const lineY = state.baseY[ci];
+        const dist = Math.abs(my - lineY);
+        const THRESHOLD = 25;
+
+        if (dist < THRESHOLD && !nearTouchRef.current[lineIdx]) {
+          nearTouchRef.current[lineIdx] = true;
+          const t = ci / (N_POINTS - 1);
+          const amp = LINES[lineIdx].strokeWidth > 1 ? 10 : 6;
+          triggerString(lineIdx, t, amp);
         }
       });
     },
@@ -257,20 +293,27 @@ export function ManifestoWeave({ progress }: ManifestoWeaveProps) {
       const my = ((touch.clientY - rect.top) / rect.height) * 600;
 
       physicsRef.current.forEach((state, lineIdx) => {
-        for (let i = 0; i < N_POINTS; i += 5) {
-          const dx = mx - state.baseX[i];
-          const dy = my - state.baseY[i];
-          if (Math.hypot(dx, dy) < 20) {
-            const t = i / (N_POINTS - 1);
-            const amp = LINES[lineIdx].strokeWidth > 1 ? 18 : 10;
-            triggerString(lineIdx, t, amp);
-            break;
-          }
+        const ci = Math.max(0, Math.min(N_POINTS - 1, Math.round((mx / 1200) * (N_POINTS - 1))));
+        const lineY = state.baseY[ci];
+        const dist = Math.abs(my - lineY);
+        const THRESHOLD = 25;
+
+        if (dist < THRESHOLD && !nearTouchRef.current[lineIdx]) {
+          nearTouchRef.current[lineIdx] = true;
+          const t = ci / (N_POINTS - 1);
+          const amp = LINES[lineIdx].strokeWidth > 1 ? 10 : 6;
+          triggerString(lineIdx, t, amp);
+        } else if (dist >= THRESHOLD) {
+          nearTouchRef.current[lineIdx] = false;
         }
       });
     },
     [triggerString]
   );
+
+  const handleTouchEnd = useCallback(() => {
+    nearTouchRef.current = [false, false, false, false];
+  }, []);
 
   const offset = (1 - progress) * DASHARRAY;
 
@@ -281,7 +324,11 @@ export function ManifestoWeave({ progress }: ManifestoWeaveProps) {
         viewBox="0 0 1200 600"
         preserveAspectRatio="none"
         onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{ pointerEvents: "auto" }}
       >
         <defs>
           <linearGradient id="weave-blue" x1="0" y1="0.5" x2="1" y2="0.5">
