@@ -5,6 +5,7 @@ import { useReveal } from "@/src/libs/animation/hooks/useReveal";
 import { SectionHead } from "@/src/components/ui/SectionHead";
 import { PortraitFrame } from "./components/portrait-frame";
 import { SkillsPanel } from "./components/skills-panel";
+import "./styles.css";
 
 export function AboutSection() {
   const t = useTranslations();

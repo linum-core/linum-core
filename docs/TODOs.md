@@ -1,12 +1,9 @@
 [ ] - Atualizar o Header (doc: header-map.md)
-    - Ajustar tamanho da logo no header
     - Padronizar o tamanho dos itens no header
     - Ajustar glass morphism
     - Ajustar responsividade
 [ ] - Atualizar manifesto (CTX-IMPLEMENTATION-LOG.md)
     - As linhas n estao com a animacao de interacao
-
-[ ] - Ajustar pro claude n ficar pedindo permissao pros arquivos dentro de src e app
 
 [ ] - Atualizar a Hero
     - Ter 3d animation na hero
@@ -30,6 +27,7 @@
     - Mandar os css para os arquivos de componentes e não deixa-los todos no geral
     
 [ ] - Colocar algum Motion: https://motionsites.ai/
+[ ] - Colocar som na entrada do site
 
 [ ] - Validar aplicação com o impeccable
     - /impeccable critique — Score UX/design (se houver superfícies existentes)

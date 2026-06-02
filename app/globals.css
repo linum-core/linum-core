@@ -37,15 +37,51 @@
     --gutter: clamp(20px, 4vw, 56px);
     --radius: 14px;
     --radius-sm: 8px;
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+    --space-10: 128px;
     /* Shadows */
     --glow-blue: 0 0 30px rgba(74,122,184,0.45), 0 0 60px rgba(74,122,184,0.18);
     --glow-red: 0 0 30px rgba(194,59,59,0.4), 0 0 60px rgba(194,59,59,0.15);
+    /* Z-index */
+    --z-below: -1;
+    --z-base: 0;
+    --z-raised: 10;
+    --z-dropdown: 20;
+    --z-sticky: 30;
+    --z-fixed: 40;
+    --z-overlay: 50;
+    --z-modal: 60;
+    --z-toast: 70;
+    --z-tooltip: 80;
     /* Font aliases → mapped via next/font variables */
     --font-display: var(--font-playfair), "Cormorant Garamond", "EB Garamond", serif;
     --font-serif: var(--font-playfair), serif;
     --font-mono-display: var(--font-cinzel), "Trajan Pro", serif;
     --font-sans: var(--font-inter), -apple-system, sans-serif;
     --font-mono: var(--font-jetbrains), "Fira Code", monospace;
+    /* Easing functions */
+    --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-inout: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Durations */
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-slow: 400ms;
+    --duration-xslow: 600ms;
+    /* Transitions */
+    --transition-base: all var(--duration-base) var(--ease-out);
+    --transition-color: color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+    --transition-transform: transform var(--duration-base) var(--ease-out);
   }
 }
 
@@ -89,6 +125,31 @@
   --animate-scroll:      scroll-bounce 1.5s ease-in-out infinite;
   --animate-shimmer:     shimmer 2.5s linear infinite;
   --animate-fade-in-up:  fade-in-up 0.5s ease-out forwards;
+
+  /* === SPACING === */
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-5:  24px;
+  --spacing-6:  32px;
+  --spacing-7:  48px;
+  --spacing-8:  64px;
+  --spacing-9:  96px;
+  --spacing-10: 128px;
+
+  /* === EASING & DURATIONS === */
+  --ease-out:       cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in:        cubic-bezier(0.4, 0, 1, 1);
+  --ease-inout:     cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:  150ms;
+  --duration-base:  250ms;
+  --duration-slow:  400ms;
+  --duration-xslow: 600ms;
+  --transition-base:      all var(--duration-base) var(--ease-out);
+  --transition-color:     color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+  --transition-transform: transform var(--duration-base) var(--ease-out);
 }
 
 /* === KEYFRAMES === */

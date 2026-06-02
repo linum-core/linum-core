@@ -8,6 +8,7 @@ import { HeroCtaButton } from "./components/hero-cta-button";
 import { Perspective3dWrap } from "./components/perspective-3d-wrap";
 import { StatsRow } from "@/src/components/ui/stats-row";
 import { ScrollIndicator } from "@/src/components/ui/scroll-indicator";
+import "./styles.css";
 
 const DEFAULT_STATS = [
   { num: "12+", label: "Sistemas em produção" },

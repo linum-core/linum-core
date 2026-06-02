@@ -1,0 +1,84 @@
+<h2>Escala de tamanhos de componentes</h2>
+<p class="subtitle">Multiples de 4 · Inputs, botões, labels-botão</p>
+
+<div class="section">
+  <div style="display:flex;flex-direction:column;gap:16px;margin-top:24px;">
+
+    <div style="display:flex;align-items:center;gap:24px;">
+      <span class="label" style="width:64px;text-align:right">xsmall</span>
+      <div style="display:flex;align-items:center;gap:16px;flex:1">
+        <button style="height:28px;padding:0 12px;font-size:11px;font-family:inherit;border-radius:6px;background:#2f4f6f;color:#f4f6fb;border:none;cursor:pointer;letter-spacing:0.04em;font-weight:500">Label</button>
+        <div style="height:28px;display:flex;align-items:center;padding:0 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(232,236,244,0.12);border-radius:6px;font-size:11px;color:#6b7480;min-width:140px">Placeholder</div>
+        <span style="font-size:11px;color:#6b7480;font-family:monospace">h:28px · px:12px · py:4px · fs:11px</span>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:24px;">
+      <span class="label" style="width:64px;text-align:right">small</span>
+      <div style="display:flex;align-items:center;gap:16px;flex:1">
+        <button style="height:32px;padding:0 14px;font-size:12px;font-family:inherit;border-radius:7px;background:#2f4f6f;color:#f4f6fb;border:none;cursor:pointer;letter-spacing:0.04em;font-weight:500">Label</button>
+        <div style="height:32px;display:flex;align-items:center;padding:0 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(232,236,244,0.12);border-radius:7px;font-size:12px;color:#6b7480;min-width:140px">Placeholder</div>
+        <span style="font-size:11px;color:#6b7480;font-family:monospace">h:32px · px:14px · py:6px · fs:12px</span>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:24px;">
+      <span class="label" style="width:64px;text-align:right">medium</span>
+      <div style="display:flex;align-items:center;gap:16px;flex:1">
+        <button style="height:40px;padding:0 16px;font-size:14px;font-family:inherit;border-radius:8px;background:#2f4f6f;color:#f4f6fb;border:none;cursor:pointer;letter-spacing:0.04em;font-weight:500">Label</button>
+        <div style="height:40px;display:flex;align-items:center;padding:0 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(232,236,244,0.12);border-radius:8px;font-size:14px;color:#6b7480;min-width:140px">Placeholder</div>
+        <span style="font-size:11px;color:#6b7480;font-family:monospace">h:40px · px:16px · py:8px · fs:14px</span>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:24px;">
+      <span class="label" style="width:64px;text-align:right">high</span>
+      <div style="display:flex;align-items:center;gap:16px;flex:1">
+        <button style="height:48px;padding:0 20px;font-size:15px;font-family:inherit;border-radius:9px;background:#2f4f6f;color:#f4f6fb;border:none;cursor:pointer;letter-spacing:0.04em;font-weight:500">Label</button>
+        <div style="height:48px;display:flex;align-items:center;padding:0 20px;background:rgba(255,255,255,0.04);border:1px solid rgba(232,236,244,0.12);border-radius:9px;font-size:15px;color:#6b7480;min-width:140px">Placeholder</div>
+        <span style="font-size:11px;color:#6b7480;font-family:monospace">h:48px · px:20px · py:12px · fs:15px</span>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:24px;">
+      <span class="label" style="width:64px;text-align:right">xhigh</span>
+      <div style="display:flex;align-items:center;gap:16px;flex:1">
+        <button style="height:56px;padding:0 24px;font-size:16px;font-family:inherit;border-radius:10px;background:#2f4f6f;color:#f4f6fb;border:none;cursor:pointer;letter-spacing:0.04em;font-weight:500">Label</button>
+        <div style="height:56px;display:flex;align-items:center;padding:0 24px;background:rgba(255,255,255,0.04);border:1px solid rgba(232,236,244,0.12);border-radius:10px;font-size:16px;color:#6b7480;min-width:140px">Placeholder</div>
+        <span style="font-size:11px;color:#6b7480;font-family:monospace">h:56px · px:24px · py:16px · fs:16px</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section" style="margin-top:32px">
+  <h3>Estrutura de tokens proposta</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px">
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(232,236,244,0.08);border-radius:8px;padding:16px">
+      <div class="label">CSS Variables</div>
+      <pre style="font-size:11px;color:#aab3c0;margin-top:8px;line-height:1.8">--size-xs-h: 28px
+--size-sm-h: 32px
+--size-md-h: 40px
+--size-lg-h: 48px
+--size-xl-h: 56px
+
+--size-xs-px: 12px
+--size-sm-px: 14px
+--size-md-px: 16px
+--size-lg-px: 20px
+--size-xl-px: 24px</pre>
+    </div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(232,236,244,0.08);border-radius:8px;padding:16px">
+      <div class="label">Classe CSS</div>
+      <pre style="font-size:11px;color:#aab3c0;margin-top:8px;line-height:1.8">.btn--xs { height: var(--size-xs-h) }
+.btn--sm { height: var(--size-sm-h) }
+.btn--md { height: var(--size-md-h) }
+.btn--lg { height: var(--size-lg-h) }
+.btn--xl { height: var(--size-xl-h) }
+
+/* mesma lógica para input, chip, label */
+.input--md, .chip--md, .tag--md</pre>
+    </div>
+  </div>
+</div>

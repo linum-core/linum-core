@@ -34,7 +34,9 @@
       "Skill(impeccable)",
       "mcp__plugin_playwright_playwright__browser_press_key",
       "mcp__plugin_playwright_playwright__browser_hover",
-      "mcp__plugin_playwright_playwright__browser_resize"
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "mcp__plugin_playwright_playwright__browser_run_code_unsafe",
+      "mcp__plugin_playwright_playwright__browser_drag"
     ],
     "additionalDirectories": [
       "/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/docs"

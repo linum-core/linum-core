@@ -41,6 +41,9 @@ playwright-report
 test-results
 .playwright-mcp
 
+# mcp tool outputs (local only)
+.mcp_output/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

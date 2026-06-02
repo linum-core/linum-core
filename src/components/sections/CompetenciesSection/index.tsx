@@ -3,66 +3,82 @@
 import { useTranslations } from "next-intl";
 import { useReveal } from "@/src/libs/animation/hooks/useReveal";
 import { SectionHead } from "@/src/components/ui/SectionHead";
-import { CraftIconDefs } from "@/src/components/ui/Icon";
 import { CompCard } from "./components/comp-card";
+import "./styles.css";
 
 interface CompItem {
   icon: string;
-  size: "lg" | "md" | "sm";
-  color: string;
   titleKey: string;
-  bodyKey: string;
+  subtitleKey: string;
   tags: string[];
 }
 
 const items: CompItem[] = [
   {
     icon: "compass",
-    size: "lg",
-    color: "rgba(74,122,184,0.25)",
-    titleKey: "competencies.consulting.title",
-    bodyKey: "competencies.consulting.description",
-    tags: ["Discovery", "Roadmap", "OKRs"],
+    titleKey: "competencies.strategy.title",
+    subtitleKey: "competencies.strategy.subtitle",
+    tags: ["Strategy", "OKRs", "Discovery", "Roadmap"],
   },
   {
     icon: "lens",
-    size: "md",
-    color: "rgba(194,59,59,0.2)",
-    titleKey: "competencies.architecture.title",
-    bodyKey: "competencies.architecture.description",
-    tags: ["Figma", "Design System", "UX Research"],
+    titleKey: "competencies.design.title",
+    subtitleKey: "competencies.design.subtitle",
+    tags: ["Figma", "Design System", "UX", "Mobile"],
   },
   {
-    icon: "quill",
-    size: "sm",
-    color: "rgba(74,122,184,0.2)",
-    titleKey: "competencies.dev.title",
-    bodyKey: "competencies.dev.description",
-    tags: ["React", "Next.js", "TypeScript"],
-  },
-  {
-    icon: "anchor",
-    size: "sm",
-    color: "rgba(194,59,59,0.15)",
-    titleKey: "competencies.api.title",
-    bodyKey: "competencies.api.description",
-    tags: ["Node.js", "PostgreSQL", "APIs"],
-  },
-  {
-    icon: "knot",
-    size: "md",
-    color: "rgba(74,122,184,0.2)",
+    icon: "links",
     titleKey: "competencies.integrations.title",
-    bodyKey: "competencies.integrations.description",
-    tags: ["Microservices", "DDD", "Event-driven"],
+    subtitleKey: "competencies.integrations.subtitle",
+    tags: ["REST", "GraphQL", "Webhooks", "OAuth"],
   },
   {
-    icon: "key",
-    size: "lg",
-    color: "rgba(194,59,59,0.18)",
+    icon: "server",
+    titleKey: "competencies.architecture.title",
+    subtitleKey: "competencies.architecture.subtitle",
+    tags: ["DDD", "CQRS", "Microservices", "Event-driven"],
+  },
+  {
+    icon: "monitor",
+    titleKey: "competencies.management.title",
+    subtitleKey: "competencies.management.subtitle",
+    tags: ["Vercel", "Analytics", "CMS", "Performance"],
+  },
+  {
+    icon: "chart",
+    titleKey: "competencies.growth.title",
+    subtitleKey: "competencies.growth.subtitle",
+    tags: ["GA4", "Funnels", "Data", "Growth"],
+  },
+  {
+    icon: "rocket",
+    titleKey: "competencies.digital.title",
+    subtitleKey: "competencies.digital.subtitle",
+    tags: ["Branding", "Strategy", "Launch", "Digital"],
+  },
+  {
+    icon: "mappin",
+    titleKey: "competencies.planning.title",
+    subtitleKey: "competencies.planning.subtitle",
+    tags: ["Roadmap", "KPIs", "Personas", "Canvas"],
+  },
+  {
+    icon: "cloud",
     titleKey: "competencies.cloud.title",
-    bodyKey: "competencies.cloud.description",
-    tags: ["AWS", "GCP", "Terraform"],
+    subtitleKey: "competencies.cloud.subtitle",
+    tags: ["AWS", "GCP", "Terraform", "CI/CD"],
+  },
+  {
+    icon: "search",
+    titleKey: "competencies.seo.title",
+    subtitleKey: "competencies.seo.subtitle",
+    tags: ["SEO", "Core Web Vitals", "Content", "Ranking"],
+  },
+  {
+    icon: "globe",
+    titleKey: "competencies.web.title",
+    subtitleKey: "competencies.web.subtitle",
+    tags: ["React", "Next.js", "Landing Pages", "CRO"],
   },
 ];
 
@@ -72,7 +88,6 @@ export function CompetenciesSection() {
 
   return (
     <section className="section comp" id="competencies" ref={ref}>
-      <CraftIconDefs />
       <div className="container">
         <SectionHead
           num="II"
@@ -85,16 +100,13 @@ export function CompetenciesSection() {
           lede={t("competencies.subtitle")}
         />
         <div className="comp-grid">
-          {items.map((item, i) => (
+          {items.map((item) => (
             <CompCard
               key={item.titleKey}
               icon={item.icon}
-              size={item.size}
-              color={item.color}
               titleKey={item.titleKey}
-              bodyKey={item.bodyKey}
+              subtitleKey={item.subtitleKey}
               tags={item.tags}
-              index={i}
             />
           ))}
         </div>

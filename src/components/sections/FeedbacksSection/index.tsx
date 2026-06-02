@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { useReveal } from "@/src/libs/animation/hooks/useReveal";
 import { SectionHead } from "@/src/components/ui/SectionHead";
 import { FeedbackRow } from "./components/feedback-row";
+import "./styles.css";
 
 interface FbItem {
   quote: string;

@@ -72,20 +72,55 @@
       "description": "Manutenção preventiva, correção de bugs e monitoramento contínuo"
     },
     "integrations": {
-      "title": "Integrações & APIs",
-      "description": "APIs externas, webhooks, integração com ERP/CRM"
+      "title": "Integrações com APIs e Serviços",
+      "description": "APIs externas, webhooks, integração com ERP/CRM",
+      "subtitle": "Conectando sistemas em uma camada unificada."
     },
     "cloud": {
-      "title": "Cloud & Infraestrutura",
-      "description": "Deploy, CI/CD, escalabilidade e DevOps"
+      "title": "Cloud e Infraestrutura",
+      "description": "Deploy, CI/CD, escalabilidade e DevOps",
+      "subtitle": "Infraestrutura resiliente e escalável como código."
     },
     "architecture": {
-      "title": "Design de Arquitetura",
-      "description": "Arquitetura de sistema escalável e segura, projetada para crescimento e resiliência."
+      "title": "Arquitetura de Software Escalável",
+      "description": "Arquitetura de sistema escalável e segura, projetada para crescimento e resiliência.",
+      "subtitle": "Sistemas distribuídos projetados para crescer."
     },
     "transformation": {
       "title": "Transformação Digital",
       "description": "Guiando empresas na transição para operações digitais modernas."
+    },
+    "strategy": {
+      "title": "Análise e Consultoria Estratégica",
+      "subtitle": "Tecnologia alinhada à intenção do negócio."
+    },
+    "design": {
+      "title": "Design Web e Mobile",
+      "subtitle": "Interfaces construídas com propósito e precisão."
+    },
+    "management": {
+      "title": "Gestão de Sites e Apps",
+      "subtitle": "Operações confiáveis e melhoria contínua."
+    },
+    "growth": {
+      "title": "Análise de Crescimento Digital",
+      "subtitle": "Estratégia orientada a dados para crescimento sustentável."
+    },
+    "digital": {
+      "title": "Inserção de Negócios no Digital",
+      "subtitle": "Do conceito à presença digital."
+    },
+    "planning": {
+      "title": "Planejamento Estratégico Personalizado",
+      "subtitle": "Roadmaps personalizados que movem negócios."
+    },
+    "seo": {
+      "title": "SEO e Rankeamento",
+      "subtitle": "Visibilidade construída em estrutura, não atalhos."
+    },
+    "web": {
+      "title": "Especialista em Web",
+      "subtitle": "Expertise web end-to-end do marketing à gestão."
     }
   },
   "portfolio": {

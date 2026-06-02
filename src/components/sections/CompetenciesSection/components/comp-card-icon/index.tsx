@@ -6,7 +6,7 @@ interface CompCardIconProps {
 
 export function CompCardIcon({ kind }: CompCardIconProps) {
   return (
-    <div className="comp-card__icon">
+    <div className="comp-card__icon-glass">
       <Icon kind={kind} />
     </div>
   );

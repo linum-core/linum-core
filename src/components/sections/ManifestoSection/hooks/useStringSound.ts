@@ -2,8 +2,8 @@
 
 import { useRef, useCallback, useEffect } from "react";
 
-// [blue-thick, red-thick, blue-thin, red-thin] — harp-like frequencies
-const BASE_FREQS = [220, 293, 440, 587] as const;
+// tensioned bass harp strings: E2, A2, D3, G3
+const BASE_FREQS = [82, 110, 146, 196] as const;
 
 export function useStringSound() {
   const ctxRef = useRef<AudioContext | null>(null);
@@ -37,20 +37,27 @@ export function useStringSound() {
     const freq = baseFreq * (0.8 + p * 0.4);
 
     const osc = ctx.createOscillator();
+    // lowpass filter rounds off the sawtooth → warm, woody harp body
+    const filter = ctx.createBiquadFilter();
     const gain = ctx.createGain();
 
-    osc.type = "triangle";
+    osc.type = "sawtooth";
     osc.frequency.setValueAtTime(freq, ctx.currentTime);
 
-    gain.gain.setValueAtTime(0, ctx.currentTime);
-    gain.gain.linearRampToValueAtTime(0.28, ctx.currentTime + 0.005);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.9);
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(700, ctx.currentTime);
+    filter.Q.setValueAtTime(1.4, ctx.currentTime);
 
-    osc.connect(gain);
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.3, ctx.currentTime + 0.008);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.8);
+
+    osc.connect(filter);
+    filter.connect(gain);
     gain.connect(ctx.destination);
 
     osc.start(ctx.currentTime);
-    osc.stop(ctx.currentTime + 0.95);
+    osc.stop(ctx.currentTime + 1.9);
   }, [getCtx]);
 
   return { pluck };

@@ -7,6 +7,10 @@
     "build": "bun run build",
     "test": "bun run test:e2e"
   },
+  "allowedEditDirs": [
+    "app",
+    "src"
+  ],
   "criticalFileGlobs": [
     "**/auth/**",
     "**/middleware.*",

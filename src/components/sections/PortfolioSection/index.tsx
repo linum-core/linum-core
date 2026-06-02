@@ -7,6 +7,7 @@ import { SectionHead } from "@/src/components/ui/SectionHead";
 import { FilterBar } from "@/src/components/ui/filter-bar";
 import { ProjectCard } from "./components/project-card";
 import { FeaturedProject } from "./components/featured-project";
+import "./styles.css";
 
 // ---------------------------------------------------------------------------
 // Project data — PT (default). EN strings will come from i18n in Phase 3.

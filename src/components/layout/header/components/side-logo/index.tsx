@@ -19,7 +19,13 @@ export function SideLogo({ scrollTo }: ISideLogoProps) {
         scrollTo(Enum_Sections.HERO);
       }}>
       <span className="nav__brand-mark">
-        <img src="/assets/logo-colors-inverted.svg" alt="Linum Core" width={62} height={62} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/logo-no-write-inverted.svg"
+          alt="Linum Core"
+          width={90}
+          height={90}
+        />
       </span>
       <span className="nav__brand-word">
         Linum<span className="nav__brand-dot">·</span>Core

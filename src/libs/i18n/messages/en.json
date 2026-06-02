@@ -71,20 +71,55 @@
       "description": "Preventive maintenance, bug fixes, and continuous monitoring"
     },
     "integrations": {
-      "title": "Integrations & APIs",
-      "description": "External APIs, webhooks, ERP/CRM integration"
+      "title": "API & Service Integrations",
+      "description": "External APIs, webhooks, ERP/CRM integration",
+      "subtitle": "Connecting systems into a unified layer."
     },
     "cloud": {
       "title": "Cloud & Infrastructure",
-      "description": "Deploy, CI/CD, scalability and DevOps"
+      "description": "Deploy, CI/CD, scalability and DevOps",
+      "subtitle": "Resilient, scalable infrastructure as code."
     },
     "architecture": {
-      "title": "Architecture Design",
-      "description": "Scalable, secure system architecture designed for growth and resilience."
+      "title": "Scalable Software Architecture",
+      "description": "Scalable, secure system architecture designed for growth and resilience.",
+      "subtitle": "Distributed systems designed to grow."
     },
     "transformation": {
       "title": "Digital Transformation",
       "description": "Guiding businesses through the transition to modern digital operations."
+    },
+    "strategy": {
+      "title": "Strategic Analysis & Consulting",
+      "subtitle": "Technology aligned with business intent."
+    },
+    "design": {
+      "title": "Web & Mobile Design",
+      "subtitle": "Interfaces built with purpose and precision."
+    },
+    "management": {
+      "title": "Sites & Apps Management",
+      "subtitle": "Reliable operations and continuous improvement."
+    },
+    "growth": {
+      "title": "Digital Growth Analysis",
+      "subtitle": "Data-driven strategy for sustainable growth."
+    },
+    "digital": {
+      "title": "Digital Business Entry",
+      "subtitle": "From concept to digital presence."
+    },
+    "planning": {
+      "title": "Strategic Planning",
+      "subtitle": "Personalized roadmaps that move businesses forward."
+    },
+    "seo": {
+      "title": "SEO & Ranking",
+      "subtitle": "Visibility built on structure, not shortcuts."
+    },
+    "web": {
+      "title": "Web Specialist",
+      "subtitle": "End-to-end web expertise from marketing to operations."
     }
   },
   "portfolio": {

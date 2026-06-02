@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useReveal } from "@/src/libs/animation/hooks/useReveal";
 import { ContactGrid } from "./components/contact-grid";
+import "./styles.css";
 
 export function ContactSection() {
   const t = useTranslations();

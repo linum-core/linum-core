@@ -6,6 +6,7 @@ import { useReveal } from "@/src/libs/animation/hooks/useReveal";
 import { useSectionProgress } from "@/src/libs/animation/hooks/useSectionProgress";
 import { ManifestoQuote } from "./components/manifesto-quote";
 import { ManifestoWeave } from "./components/manifesto-weave";
+import "./styles.css";
 
 export function ManifestoSection() {
   const t = useTranslations();

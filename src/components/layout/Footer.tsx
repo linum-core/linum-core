@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import './footer-styles.css'
 
 const cols = [
   {

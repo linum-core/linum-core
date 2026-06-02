@@ -1,0 +1,5 @@
+{"type":"server-started","port":60699,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:60699","screen_dir":"/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/.superpowers/brainstorm/19508-1780257719/content","state_dir":"/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/.superpowers/brainstorm/19508-1780257719/state"}
+{"type":"screen-added","file":"/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/.superpowers/brainstorm/19508-1780257719/content/component-scale.html"}
+{"type":"screen-added","file":"/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/.superpowers/brainstorm/19508-1780257719/content/colors-effects.html"}
+{"type":"screen-added","file":"/Users/gabrielgv/Documents/softs/linum core/linum-core-portifolio/.superpowers/brainstorm/19508-1780257719/content/skill-architecture.html"}
+{"type":"server-stopped","reason":"idle timeout"}
